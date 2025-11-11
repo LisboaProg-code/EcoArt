@@ -1,0 +1,202 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    /* background gradiente preto do video lá */
+}
+
+/* header */
+
+header{
+    background: linear-gradient(135deg, #5A7152, #2E4430);
+    z-index: 200;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.45rem 2rem 0.45rem 1.27rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* left header */
+
+.left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+.menuContainer{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* right header */
+
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.right a{
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    transition: background-color .2s ease;
+    text-decoration: none;
+    color: black;
+}
+
+.right a:hover{
+    background-color: #f7f9fa;
+}
+
+.right img{
+    width: 1.5rem;
+}
+
+/* sidebar */
+
+.sidebar{
+    margin-top: 4rem;
+    width: 4rem;
+    height: 100%;
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 1.1rem 0;
+    overflow-y: auto;
+    background: linear-gradient(135deg, #2E4430, #5A7152);
+    transition: width .5s ease;
+}
+
+.sidebar.menuToggle{
+    width: 18.75rem;
+}
+
+.sidebar a{
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    padding: .9rem .7rem ;
+    text-decoration: none;
+    margin: 0 .5rem;
+    border-radius: .5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    color: black;
+}
+
+.sidebar a:hover{
+    background-color: #739269;
+}
+
+.sidebar a.selected{
+    background-color: #739269;
+}
+
+.sidebar i{
+    font-size: 1.5rem;
+}
+
+main{
+    margin-top: 3rem;
+    margin-left: 4rem;
+    padding: .8rem 0;
+    transition: padding-left .5s ease;
+}
+
+main.menuToggle{
+    margin-left: 18.75rem;
+}
+
+
+.hero{
+    background-image: url(../assets/bg-home-2-m.jpg);
+    background-position: center 60%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero .conteinerText{
+    height: 50%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero .text{
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero .text h1{
+    font-size: 3.2rem;
+    font-family: "Prata", 'Times New Roman', Times, serif;
+    font-weight: 500;
+}
+
+.hero .text p{
+    font-size: 1.7rem;
+}
+
+
+/* responsive */
+
+@media (max-width: 500px){
+    .right .icons{
+        display: none;
+    }
+
+    .sidebar{
+        width: 0;
+    }
+
+    main{
+        margin-left: 0;
+    }
+
+    main.menuToggle{
+        margin-left: 0;
+    }
+
+    .hero{
+        background-position: 63% center;
+    }
+
+    .hero .text h1{
+        font-size: 2.5rem;
+    }
+
+}
